@@ -8,28 +8,49 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
-    e.preventDefault();
+  const handleLogin = async (e) => {
+  e.preventDefault();
 
-    // perform user login
-    user
-      .login(email, password)
-      .then((response) => {
-        alert(response.data.message);
+  try {
+    const response = await user.login(email, password);
+    alert(response.data.message);
 
-        // clear the form
-        setEmail("");
-        setPassword("");
+    // clear the form
+    setEmail("");
+    setPassword("");
 
-        // redirect to dashboard page
-        setTimeout(() => {
-          navigate("/dashboard");
-        }, 500);
-      })
-      .catch((error) => {
-        alert(error.response.data.message);
-      });
-  };
+    // redirect to dashboard page
+    setTimeout(() => {
+      navigate("/dashboard");
+    }, 500);
+  } catch (error) {
+    console.error('Login error:', error);
+    alert(error.response?.data?.message || 'Login failed');
+  }
+};
+
+  // const handleLogin = (e) => {
+  //   e.preventDefault();
+
+  //   // perform user login
+  //   user
+  //     .login(email, password)
+  //     .then((response) => {
+  //       alert(response.data.message);
+
+  //       // clear the form
+  //       setEmail("");
+  //       setPassword("");
+
+  //       // redirect to dashboard page
+  //       setTimeout(() => {
+  //         navigate("/dashboard");
+  //       }, 500);
+  //     })
+  //     .catch((error) => {
+  //       alert(error.response.data.message);
+  //     });
+  // };
 
   return (
     <div className="container mt-5">
