@@ -7,12 +7,8 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
-<<<<<<< HEAD
 
 
-=======
-  
->>>>>>> 05f921b54814175721a416777956c37e2cb44403
   const handleLogin = (e) => {
     e.preventDefault();
 
@@ -32,8 +28,7 @@ const Login = () => {
         }, 500);
       })
       .catch((error) => {
-        alert(error.response?.data?.message || 'Login failed');
-        // alert(error.response.data.message);
+        alert(error.response.data.message);
       });
   };
 
