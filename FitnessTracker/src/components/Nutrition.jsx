@@ -80,7 +80,7 @@ const Nutrition = () => {
 
 <h3>Entries</h3>
 <ul> 
-    {addEntry.map(entry => (
+    {Entry.map(entry => (
         <li key={entry._id}>
             {entry.date}: {entry.calories} kcal, {entry.carbs}g carbs, {entry.protein}g protein, {entry.fat}g fat, {entry.water}L water
         </li>
