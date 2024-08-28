@@ -28,7 +28,8 @@ const Login = () => {
         }, 500);
       })
       .catch((error) => {
-        alert(error.response.data.message);
+        alert(error.response?.data?.message || 'Login failed');
+        // alert(error.response.data.message);
       });
   };
 
