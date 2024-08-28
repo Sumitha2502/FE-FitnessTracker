@@ -69,7 +69,7 @@ const Nutrition = () => {
         value={water}
         onChange={(e) => setWater(e.target.value)}
       />
-      <button onClick={addEntry}>Add Entry</button>
+      <button onClick={Entry}>Add Entry</button>
 
       <img
         src="https://www.veganeasy.org/wp-content/uploads/2020/09/nutrition_chart_102-1.jpg"
