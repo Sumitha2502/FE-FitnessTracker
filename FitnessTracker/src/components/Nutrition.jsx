@@ -78,14 +78,16 @@ const Nutrition = () => {
         height="600"
       ></img>
 
-      {/* <h3>Entries</h3>
-            <ul> 
-                {addEntry.map(entry => ( */}
-      {/* <li key={entry._id}>
-                        {entry.date}: {entry.calories} kcal, {entry.carbs}g carbs, {entry.protein}g protein, {entry.fat}g fat, {entry.water}L water
-                    </li> */}
-      {/* ))}
-             </ul> */}
+<h3>Entries</h3>
+<ul> 
+    {addEntry.map(entry => (
+        <li key={entry._id}>
+            {entry.date}: {entry.calories} kcal, {entry.carbs}g carbs, {entry.protein}g protein, {entry.fat}g fat, {entry.water}L water
+        </li>
+    ))}
+</ul>
+
+      
     </div>
   );
 };

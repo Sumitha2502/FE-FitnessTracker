@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import user from "../activity/user";
 
@@ -7,6 +7,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
+
 
   const handleLogin = (e) => {
     e.preventDefault();
