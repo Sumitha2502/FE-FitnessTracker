@@ -7,11 +7,14 @@ import Home from "./components/Home";
 import Goals from "./components/Goals";
 import Nutrition from './components/Nutrition';
 import SleepPatterns from './components/SleepPatterns';
+import DashboardNav from './wrappers/DashboardNav';
 
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <DashboardNav />,
     element: <HomeNav />,
+    
     children: [
       {
         path: "/",

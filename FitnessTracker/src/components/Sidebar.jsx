@@ -10,7 +10,7 @@ const Sidebar = () => {
       {items.map((item, index) => (
         <Link
           key={index}
-          to={`/dashboard/${item.toLowerCase()}`}
+          to={`/DashboardNav/${item.toLowerCase()}`}
           className={`list-group-item list-group-item-action ${
             active === item ? "active" : ""
           }`}

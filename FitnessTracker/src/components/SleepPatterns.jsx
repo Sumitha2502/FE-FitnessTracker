@@ -55,14 +55,14 @@ const SleepPatterns = () => {
         ></img>
       </div>
 
-      {/* <h3>Entries</h3>
+      <h3>Entries</h3>
             <ul>
                 {entries.map(entry => (
                     <li key={entry._id}>
                         {entry.date}: {entry.duration} hours, {entry.quality} quality
                     </li>
                 ))}
-            </ul> */}
+            </ul>
     </div>
   );
 };

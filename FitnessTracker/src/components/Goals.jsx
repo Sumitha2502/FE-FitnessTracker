@@ -59,7 +59,7 @@ const Goals = () => {
         ></img>
       </div>
 
-      {/* <h3>Goal List</h3>
+      <h3>Goal List</h3>
             <ul>
                 {goals.map(goal => (
                     <li key={goal._id}>
@@ -70,7 +70,7 @@ const Goals = () => {
                         {!goal.achieved && <button onClick={() => markAsAchieved(goal._id)}>Mark as Achieved</button>}
                     </li>
                 ))}
-            </ul> */}
+            </ul>
     </div>
   );
 };
