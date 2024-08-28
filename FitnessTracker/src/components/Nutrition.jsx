@@ -69,7 +69,7 @@ const Nutrition = () => {
         value={water}
         onChange={(e) => setWater(e.target.value)}
       />
-      <button onClick={Entry}>Add Entry</button>
+      <button onClick={nutri}>Add Entry</button>
 
       <img
         src="https://www.veganeasy.org/wp-content/uploads/2020/09/nutrition_chart_102-1.jpg"
@@ -80,7 +80,7 @@ const Nutrition = () => {
 
 <h3>Entries</h3>
 <ul> 
-    {Entry.map(entry => (
+    {nutri.map(entry => (
         <li key={entry._id}>
             {entry.date}: {entry.calories} kcal, {entry.carbs}g carbs, {entry.protein}g protein, {entry.fat}g fat, {entry.water}L water
         </li>
