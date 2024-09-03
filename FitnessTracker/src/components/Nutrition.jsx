@@ -8,7 +8,7 @@ const Nutrition = () => {
   const [protein, setProtein] = useState("");
   const [fat, setFat] = useState("");
   const [water, setWater] = useState("");
-  const [entries, setEntries] = useState([]);
+  const [entry, setEntries] = useState([]);
 
   useEffect(() => {
     fetchEntries();
@@ -87,7 +87,6 @@ const Nutrition = () => {
     ))}
 </ul>
 
-      
     </div>
   );
 };

@@ -22,9 +22,8 @@ const Login = () => {
         setEmail("");
         setPassword("");
 
-        // redirect to dashboard page
         setTimeout(() => {
-          navigate("/dashboard");
+          navigate("/Goals");
         }, 500);
       })
       .catch((error) => {
