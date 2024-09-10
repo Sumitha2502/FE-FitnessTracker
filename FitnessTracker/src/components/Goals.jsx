@@ -18,7 +18,7 @@ const Goals = () => {
 
   const addGoal = async () => {
     const newGoal = { title, description, targetDate };
-    await axios.post("https://be-fitnesstracker-4.onrender.com/api/goals", newGoal);
+    await axios.post("/api/goals", newGoal);
     fetchGoals();
     setTitle("");
     setDescription("");
@@ -26,7 +26,7 @@ const Goals = () => {
   };
 
   const markAsAchieved = async (id) => {
-    await axios.put(`https://be-fitnesstracker-4.onrender.com/api/goals/${id}`);
+    await axios.put(`/api/goals/${id}`);
     fetchGoals();
   };
 

@@ -8,7 +8,7 @@ const Nutrition = () => {
   const [protein, setProtein] = useState("");
   const [fat, setFat] = useState("");
   const [water, setWater] = useState("");
-  const [entry, setEntries] = useState([]);
+  const [entries, setEntries] = useState([]);
 
   useEffect(() => {
     fetchEntries();
@@ -19,7 +19,7 @@ const Nutrition = () => {
     setEntries(response.data);
   };
 
-  const Entry = async () => {
+  const addEntry = async () => {
     const newEntry = { date, calories, carbs, protein, fat, water };
     await axios.post("/api/nutrition", newEntry);
     fetchEntries();
@@ -69,7 +69,7 @@ const Nutrition = () => {
         value={water}
         onChange={(e) => setWater(e.target.value)}
       />
-      <button onClick={Entry}>Add Entry</button>
+      <button onClick={addEntry}>Add Entry</button>
 
       <img
         src="https://www.veganeasy.org/wp-content/uploads/2020/09/nutrition_chart_102-1.jpg"
@@ -80,7 +80,7 @@ const Nutrition = () => {
 
 <h3>Entries</h3>
 <ul> 
-    {Entry.map(entry => (
+    {entries.map(entry => (
         <li key={entry._id}>
             {entry.date}: {entry.calories} kcal, {entry.carbs}g carbs, {entry.protein}g protein, {entry.fat}g fat, {entry.water}L water
         </li>
