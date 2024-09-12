@@ -23,7 +23,7 @@ const Login = () => {
         setPassword("");
 
         setTimeout(() => {
-          navigate("/Nutrition");
+          navigate("/nutrition");
         }, 500);
       })
       .catch((error) => {
