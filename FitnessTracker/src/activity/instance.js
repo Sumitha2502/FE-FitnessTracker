@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // define the base url for the API
-const baseURL = 'https://be-fitnesstracker-4.onrender.com/api';
+const baseURL = 'https://fitnesstracker-be.onrender.com/api';
 
 // create an axios instance
 const instance = axios.create({
