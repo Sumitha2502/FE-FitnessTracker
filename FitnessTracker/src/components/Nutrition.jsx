@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import  {instance}  from '/src/activity/instance'
+import  instance  from '/src/activity/instance'
 // import axios from "axios"
 
 const Nutrition = () => {
