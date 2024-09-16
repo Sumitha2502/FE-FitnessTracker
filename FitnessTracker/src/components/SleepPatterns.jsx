@@ -12,13 +12,13 @@ const SleepPatterns = () => {
   }, []);
 
   const fetchEntries = async () => {
-    const response = await axios.get("/api/sleep");
+    const response = await instance.get("/api/sleep/getallsleep");
     setEntries(response.data);
   };
 
   const addEntry = async () => {
     const newEntry = { date, duration, quality };
-    await axios.post("/api/sleep", newEntry);
+    await instance.post("/api/sleep", newEntry);
     fetchEntries();
     setDate("");
     setDuration("");

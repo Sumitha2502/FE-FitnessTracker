@@ -12,13 +12,13 @@ const Goals = () => {
   }, []);
 
   const fetchGoals = async () => {
-    const response = await axios.get("/api/goals");
+    const response = await instance.get("/api/goals/getallgoals");
     setGoals(response.data);
   };
 
   const addGoal = async () => {
     const newGoal = { title, description, targetDate };
-    await axios.post("/api/goals", newGoal);
+    await instance.post("/api/goals", newGoal);
     fetchGoals();
     setTitle("");
     setDescription("");
@@ -26,7 +26,7 @@ const Goals = () => {
   };
 
   const markAsAchieved = async (id) => {
-    await axios.put(`/api/goals/${id}`);
+    await instance.put(`/api/goals/${id}`);
     fetchGoals();
   };
 

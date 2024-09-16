@@ -15,13 +15,13 @@ const Nutrition = () => {
   }, []);
 
   const fetchEntries = async () => {
-    const response = await axios.get("/api/nutrition/getallnutrition");
+    const response = await instance.get("/api/nutrition/getallnutrition");
     setEntries(response.data);
   };
 
   const addEntry = async () => {
     const newEntry = { date, calories, carbs, protein, fat, water };
-    await axios.post("/api/nutrition", newEntry);
+    await instance.post("/api/nutrition", newEntry);
     fetchEntries();
     setDate("");
     setCalories("");
