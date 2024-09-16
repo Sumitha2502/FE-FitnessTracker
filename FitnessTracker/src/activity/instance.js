@@ -21,4 +21,4 @@ const protectedInstance = axios.create({
     withCredentials: true,
 });
 
-export { instance, protectedInstance };
+export default { instance, protectedInstance };
