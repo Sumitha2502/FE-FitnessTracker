@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import instance from "../activity/instance"
+import axios from "axios"
 
 const Nutrition = () => {
   const [date, setDate] = useState("");
@@ -15,13 +16,15 @@ const Nutrition = () => {
   }, []);
 
   const fetchEntries = async () => {
-    const response = await instance.get("/api/nutrition/getallnutrition");
-    setEntries(response.data);
+    
+    const response = await axios.get("https://fitnesstracker-be.onrender.com/api/nutrition/getallnutrition");
+    const result=response.json()
+    setEntries(result.data);
   };
 
   const addEntry = async () => {
     const newEntry = { date, calories, carbs, protein, fat, water };
-    await instance.post("/api/nutrition", newEntry);
+    await axios.post("/api/nutrition", newEntry);
     fetchEntries();
     setDate("");
     setCalories("");
