@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import instance from "../activity/instance"
 
 const SleepPatterns = () => {
   const [date, setDate] = useState("");
