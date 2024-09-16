@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { instance, protectedInstance } from "../activity/instance"
-import axios from "axios"
+import  {instance}  from '/src/activity/instance'
+// import axios from "axios"
 
 const Nutrition = () => {
   const [date, setDate] = useState("");
@@ -25,7 +25,7 @@ const Nutrition = () => {
 
   const addEntry = async () => {
     const newEntry = { date, calories, carbs, protein, fat, water };
-    await axios.post("/api/nutrition", newEntry);
+    await instance.post("/api/nutrition", newEntry);
     fetchEntries();
     setDate("");
     setCalories("");

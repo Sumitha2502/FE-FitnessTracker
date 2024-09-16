@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { instance } from "../activity/instance"
+import  {instance}  from '/src/activity/instance'
 
 const Goals = () => {
   const [title, setTitle] = useState("");

@@ -1,9 +1,10 @@
 import axios from 'axios';
 
+// define the base url for the API
 const baseURL = 'https://fitnesstracker-be.onrender.com/api';
 
-// Create the axios instances
-export const instance = axios.create({
+// create an axios instance
+const instance = axios.create({
     baseURL,
     timeout: 5000,
     headers: {
@@ -11,7 +12,7 @@ export const instance = axios.create({
     },
 });
 
-export const protectedInstance = axios.create({
+const protectedInstance = axios.create({
     baseURL,
     timeout: 5000,
     headers: {
@@ -19,6 +20,49 @@ export const protectedInstance = axios.create({
     },
     withCredentials: true,
 });
+
+export default { instance, protectedInstance };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import axios from 'axios';
+
+// const baseURL = 'https://fitnesstracker-be.onrender.com/api';
+
+// // Create the axios instances
+// export const instance = axios.create({
+//     baseURL,
+//     timeout: 5000,
+//     headers: {
+//         'Content-Type': 'application/json',
+//     },
+// });
+
+// export const protectedInstance = axios.create({
+//     baseURL,
+//     timeout: 5000,
+//     headers: {
+//         'Content-Type': 'application/json',
+//     },
+//     withCredentials: true,
+// });
 
 
 
@@ -33,28 +77,3 @@ export const protectedInstance = axios.create({
 
 
 
-
-// import axios from 'axios';
-
-// // define the base url for the API
-// // const baseURL = 'https://fitnesstracker-be.onrender.com/api';
-
-// // create an axios instance
-// export const instance = axios.create({
-//     baseURL:'https://fitnesstracker-be.onrender.com/api',
-//     timeout: 5000,
-//     headers: {
-//         'Content-Type': 'application/json',
-//     },
-// });
-
-// export const protectedInstance = axios.create({
-//     baseURL:'https://fitnesstracker-be.onrender.com/api',
-//     timeout: 5000,
-//     headers: {
-//         'Content-Type': 'application/json',
-//     },
-//     withCredentials: true,
-// });
-
-// // export default{ instance, protectedInstance };

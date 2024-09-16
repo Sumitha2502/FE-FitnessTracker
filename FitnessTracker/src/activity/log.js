@@ -1,4 +1,4 @@
-import { protectedInstance } from "./instance";
+import { protectedInstance } from '/src/activity/instance';
 
 const log = {
     getGoals: async () => {

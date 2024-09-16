@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { instance, protectedInstance } from "../activity/instance"
+import {instance}  from '/src/activity/instance'
 
 const SleepPatterns = () => {
   const [date, setDate] = useState("");
