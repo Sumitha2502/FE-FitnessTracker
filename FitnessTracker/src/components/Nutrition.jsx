@@ -15,7 +15,7 @@ const Nutrition = () => {
   }, []);
 
   const fetchEntries = async () => {
-    const response = await axios.get("/api/nutrition");
+    const response = await axios.get("/api/nutrition/getallnutrition");
     setEntries(response.data);
   };
 
