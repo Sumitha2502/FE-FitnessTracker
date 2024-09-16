@@ -22,4 +22,4 @@ const protectedInstance = axios.create({
 });
 
 // export default{ instance, protectedInstance };
-export default instance;
+export default{ instance, protectedInstance };
