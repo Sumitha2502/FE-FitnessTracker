@@ -1,6 +1,6 @@
 import './App.css'
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import HomeNav from "./wrappers/HomeNav";
+// import HomeNav from "./wrappers/HomeNav";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import Home from "./components/Home";
