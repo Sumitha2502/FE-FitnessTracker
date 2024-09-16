@@ -1,4 +1,4 @@
-import { instance, protectedInstance } from '../activity/instance';
+import { instance, protectedInstance } from './instance';
 
 // define the user 
 const user = {

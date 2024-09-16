@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import instance from "../activity/instance"
+import { instance, protectedInstance } from "../activity/instance"
 import axios from "axios"
 
 const Nutrition = () => {
@@ -16,10 +16,11 @@ const Nutrition = () => {
   }, []);
 
   const fetchEntries = async () => {
-    
-    const response = await axios.get("https://fitnesstracker-be.onrender.com/api/nutrition/getallnutrition");
-    const result=response.json()
-    setEntries(result.data);
+    const response = await instance.get("/api/nutrition/getallnutrition");
+    setEntries(response.data);
+    // const response = await axios.get("https://fitnesstracker-be.onrender.com/api/nutrition/getallnutrition");
+    // const result=response.json()
+    // setEntries(result.data);
   };
 
   const addEntry = async () => {
