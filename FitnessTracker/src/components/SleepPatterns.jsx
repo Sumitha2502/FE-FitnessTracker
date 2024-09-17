@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import instance  from '/src/activity/instance'
+import { instance } from "../activity/instance";
 
 const SleepPatterns = () => {
   const [date, setDate] = useState("");
@@ -12,13 +12,13 @@ const SleepPatterns = () => {
   }, []);
 
   const fetchEntries = async () => {
-    const response = await instance.get("/api/sleep/getallsleep");
+    const response = await instance.get("/sleep/getallsleep");
     setEntries(response.data);
   };
 
   const addEntry = async () => {
     const newEntry = { date, duration, quality };
-    await instance.post("/api/sleep", newEntry);
+    await instance.post("/sleep/api/sleep", newEntry);
     fetchEntries();
     setDate("");
     setDuration("");
@@ -56,13 +56,13 @@ const SleepPatterns = () => {
       </div>
 
       <h3>Entries</h3>
-            <ul>
-                {entries.map(entry => (
-                    <li key={entry._id}>
-                        {entry.date}: {entry.duration} hours, {entry.quality} quality
-                    </li>
-                ))}
-            </ul>
+      <ul>
+        {entries.map((entry) => (
+          <li key={entry._id}>
+            {entry.date}: {entry.duration} hours, {entry.quality} quality
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

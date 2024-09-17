@@ -1,52 +1,54 @@
-import './App.css'
+import "./App.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-// import HomeNav from "./wrappers/HomeNav";
+import HomeNav from "./wrappers/HomeNav";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import Home from "./components/Home";
 import Goals from "./components/Goals";
-import Nutrition from './components/Nutrition';
-import SleepPatterns from './components/SleepPatterns';
-import DashboardNav from './wrappers/DashboardNav';
+import Nutrition from "./components/Nutrition";
+import SleepPatterns from "./components/SleepPatterns";
+// import DashboardNav from './wrappers/DashboardNav';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <DashboardNav />,
-    // element: <HomeNav />,
-    
+    element: <HomeNav />,
     children: [
+      // {
+      //   path: "/",
+      //   element: <HomeNav />
+      // },
+
       {
         path: "/",
-        element: <Home />
+        element: <Home />,
       },
       {
         path: "register",
-        element: <Register />
+        element: <Register />,
       },
       {
         path: "login",
-        element: <Login />
+        element: <Login />,
       },
       {
-      path: "nutrition",
-      element: <Nutrition />
+        path: "nutrition",
+        element: <Nutrition />,
       },
       {
-        path:"goals",
-        element:<Goals />
+        path: "goals",
+        element: <Goals />,
       },
       {
-        path:"SleepPatterns",
-        element:<SleepPatterns />
-      }
-    ]
+        path: "SleepPatterns",
+        element: <SleepPatterns />,
+      },
+    ],
   },
- 
 ]);
 
 const App = () => {
   return <RouterProvider router={router} />;
-}
+};
 
 export default App;

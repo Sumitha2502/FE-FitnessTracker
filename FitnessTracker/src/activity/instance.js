@@ -2,6 +2,7 @@ import axios from 'axios';
 
 // define the base url for the API
 const baseURL = 'https://fitnesstracker-be.onrender.com/api';
+// const baseURL='http://localhost:3004/api';
 
 // create an axios instance
 const instance = axios.create({
@@ -21,7 +22,7 @@ const protectedInstance = axios.create({
     withCredentials: true,
 });
 
-export default { instance, protectedInstance };
+export { instance, protectedInstance };
 
 
 
@@ -68,7 +69,7 @@ export default { instance, protectedInstance };
 
 
 
- 
+
 
 
 

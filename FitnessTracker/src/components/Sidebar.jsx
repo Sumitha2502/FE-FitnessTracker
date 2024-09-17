@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const [active, setActive] = useState("Dashboard");
-  const items = ["Dashboard", "Goals", "Applications", "Log"];
+  const items = ["Nutrition", "Goals", "SleepPatterns"];
 
   return (
     <div className="list-group">
-      {items.map((item, index) => (
+      {/* {items.map((item, index) => (
         <Link
           key={index}
           to={`/DashboardNav/${item.toLowerCase()}`}
@@ -18,7 +18,7 @@ const Sidebar = () => {
         >
           {item}
         </Link>
-      ))}
+      ))} */}
     </div>
   );
 };

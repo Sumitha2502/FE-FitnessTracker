@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import  instance  from '/src/activity/instance'
+import  {instance}  from '../activity/instance'
 
 const Goals = () => {
   const [title, setTitle] = useState("");
@@ -12,23 +12,23 @@ const Goals = () => {
   }, []);
 
   const fetchGoals = async () => {
-    const response = await instance.get("/api/goals/getallgoals");
+    const response = await instance.get("/goals/getallgoals");
     setGoals(response.data);
   };
 
   const addGoal = async () => {
     const newGoal = { title, description, targetDate };
-    await instance.post("/api/goals", newGoal);
+    await instance.post("/goals/api/goals", newGoal);
     fetchGoals();
     setTitle("");
     setDescription("");
     setTargetDate("");
   };
 
-  const markAsAchieved = async (id) => {
-    await instance.put(`/api/goals/${id}`);
-    fetchGoals();
-  };
+  // const markAsAchieved = async (id) => {
+  //   await instance.put(`/goals/${id}`);
+  //   fetchGoals();
+  // };
 
   return (
     <div className="m-4 text-center">
@@ -67,7 +67,7 @@ const Goals = () => {
                         <p>{goal.description}</p>
                         <p>Target Date: {goal.targetDate}</p>
                         <p>Status: {goal.achieved ? 'Achieved' : 'Pending'}</p>
-                        {!goal.achieved && <button onClick={() => markAsAchieved(goal._id)}>Mark as Achieved</button>}
+                        {/* {!goal.achieved && <button onClick={() => markAsAchieved(goal._id)}>Mark as Achieved</button>} */}
                     </li>
                 ))}
             </ul>

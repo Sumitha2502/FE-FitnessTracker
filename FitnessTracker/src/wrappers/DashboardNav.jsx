@@ -4,14 +4,13 @@ import Sidebar from "../components/Sidebar";
 
 export async function loader() {
   // get the currently logged in user
-  const users = await user.getCurrentUser();
+  const user = await user.getCurrentUser();
 
   // return the user data
-  return { users };
+  return { user };
 }
 
 const DashboardNav = () => {
-  const { users } = useLoaderData();
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -57,7 +56,7 @@ const DashboardNav = () => {
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
                   <a className="nav-link disabled" aria-disabled="true">
-                    Welcome {user.data.user.name}
+                    {user?.data?.user?.name}
                   </a>
                 </li>
                 <li className="nav-item">

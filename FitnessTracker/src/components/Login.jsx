@@ -8,7 +8,6 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-
   const handleLogin = (e) => {
     e.preventDefault();
 
@@ -27,7 +26,7 @@ const Login = () => {
         }, 500);
       })
       .catch((error) => {
-        alert(error.response?.data?.message || 'Login failed');
+        alert(error.response?.data?.message || "Login failed");
         // alert(error.response.data.message);
       });
   };

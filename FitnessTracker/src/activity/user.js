@@ -29,6 +29,16 @@ const user = {
         // make a POST request to the logout endpoint
         return await protectedInstance.get('/users/logout');
     }
+
+    // logout: async () => {
+    //     try {
+    //         const response = await protectedInstance.get('/users/logout');
+    //         return response.data;
+    //     } catch (error) {
+    //         console.error('Error logging out:', error);
+    //         throw error;
+    //     }
+    // },
 }
 
 // export the user 

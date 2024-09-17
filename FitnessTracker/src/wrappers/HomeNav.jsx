@@ -54,7 +54,6 @@ const HomeNav = () => {
           </div>
         </div>
       </nav>
-
       <Outlet />
     </div>
   );

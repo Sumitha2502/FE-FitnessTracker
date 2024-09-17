@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import user from "../activity/user";
-import { showToast, ToastManager } from "./ToastManager";
+// import { showToast, ToastManager } from "./ToastManager";
 
 const Register = () => {
   const [name, setName] = useState("");
